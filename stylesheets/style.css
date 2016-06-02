@@ -1,0 +1,152 @@
+/*CSS Document*/
+*{ margin:0; padding: 0;}
+
+/*#wrapper{
+	margin: 0px;
+	padding: 0px;
+}
+
+ul,li{margin:0; padding:0;}必须先对其设置一个值*/
+
+#header{
+	height: 329px;
+	background:url(beijing/top_bg.jpg) no-repeat;
+	border: 1px solid #ccc;
+}
+
+.header_1{
+	width: 980px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+.loge{
+	width:269px; height: 80px; float: left; 
+	border: 1px solid #ccc;
+	padding: 25px 0px 0px 25px;
+}
+
+.catalog{
+	width: 615px; height: 125px; float: right;
+	background: url(beijing/Navigation.png) no-repeat;
+	border: 1px solid #ccc;
+	margin-top: 18px;
+}
+
+ul.nav{
+	padding-top:30px;
+	text-align: right;
+	border: 1px solid #ccc;
+	
+}
+
+
+ul.nav li{
+	/*float: left;
+	overflow: hidden; */    /*用此种方式清除浮动时必须定义width或zoom:1，同时不能定义height，不能和position配合使用*/  
+	width: 124px;
+	padding:17px 0px;
+	display: inline-block;   /*display:block; 块级元素,简单来说就是就是有换行,会换到第二行。display:inline-block; 就是在同一行内的块级元素。*/
+	list-style: none;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+
+#middle{
+	height: 1100px; 
+	border: 1px solid #ccc;
+	background: url(beijing/main_bg.jpg)
+}
+
+#content{
+	width: 1003px;
+	height: 1300px;
+	left: 220px;
+	top: 200px;
+	position: absolute;
+	border: 1px solid #ccc;
+	background: url(beijing/content_bg.png);
+}
+
+.content_1{
+	/*width: 618px;
+	height: 510px;*/
+	float: left;
+	border: 1px solid #ccc;
+}
+
+.con_text{
+	width: 618px;
+	height: 510px;
+	margin: 50px 0px 0px 50px;
+	border: 1px solid #ccc;
+}
+
+.con_fenh{
+	width: 618px;
+    margin-left: 50px;
+    height: 15px;
+    border-bottom: 1px dashed #CCCCCC;
+    border-top: 1px dashed #CCCCCC;
+}
+
+.con_feny{
+	width: 615px;
+	height: 34px;
+	border-bottom: 1px dashed #CCCCCC;
+	border-top: 1px dashed #CCC;
+	/*position: relative;
+	left: 40px;
+	top: 50px;*/
+	margin: 50px 0px 0px 40px;
+}
+
+.content_2{
+	width: 225px;
+	height: 1097px;
+	margin: 80px 50px 0px 0px;
+	float: right;
+	border: 1px solid #ccc;
+}
+
+#footer{
+	height: 366px;background: url(beijing/bot_bg.jpg) repeat-x;
+	border: 1px solid #ccc;
+}
+
+.footer_1{
+	width: 900px;
+	margin:0 auto;
+	border: 1px solid #ccc;
+}
+
+.footer1{
+	width: 336px;
+	height: 226px;
+	margin-top: 90px;
+	float: left;
+	border: 1px solid #ccc;
+}
+
+.footer2{
+	width: 164px;
+	height: 226px;
+	margin-top: 90px;
+	float: left;
+	margin-left: 60px;
+	border: 1px solid #ccc;
+}
+
+.footer3{
+	width: 258px;
+	height: 226px;
+	margin-top: 90px;
+	float: right;
+	border: 1px solid #ccc;
+	
+}
+
+/*去浮动*/
+
+ .clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+ .clearfloat{zoom:1}
