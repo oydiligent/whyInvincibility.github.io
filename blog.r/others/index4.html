@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>无缝滚动</title>
+	<style>
+	*{margin: 0; padding: 0;}
+	#div1 {width: 712px; height: 108px; margin: 100px auto; position: relative; background: red; overflow: hidden;}
+	#div1 ul{position: absolute; left:0; top:0;}
+	#div1 ul li{float: left; width: 178px; height: 108px; list-style: none;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+		//alert(oDiv);
+		var oUl=oDiv.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		var speed=-2;
+		oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+		oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';//又些错
+		/*setInterval(function(){
+			if (oUl.offsetLeft<-oUl.offsetWidth/2) {//offsetleft是负数，要把-oUl.offsetWidth/2写成负数
+				oUl.style.left='0';
+			}
+			oUl.style.left=oUl.offsetLeft-2+'px';
+		},30);*/  //向左单向移动
+		 /*setInterval(function(){
+			if (oUl.offsetLeft<-oUl.offsetWidth/2) {//offsetleft是负数，要把-oUl.offsetWidth/2写成负数
+				oUl.style.left='0';
+			}
+			if (oUl.offsetLeft>0) {
+				oUl.style.left=-oUl.offsetWidth/2+'px';
+			}
+			oUl.style.left=oUl.offsetLeft+2+'px';
+		},30);*/
+		function move(){  
+			if (oUl.offsetLeft<-oUl.offsetWidth/2) {//offsetleft是负数，要把-oUl.offsetWidth/2写成负数
+				oUl.style.left='0';
+			}
+			if (oUl.offsetLeft>0) {
+				oUl.style.left=-oUl.offsetWidth/2+'px';
+			}
+			oUl.style.left=oUl.offsetLeft+speed+'px';
+		}
+		var timer=setInterval(move,30);//先把这个函数存在定时器中
+		oDiv.onmouseover=function(){
+			clearInterval(timer);
+		};
+		oDiv.onmouseout=function(){
+			timer=setInterval(move,30);
+		};
+		document.getElementsByTagName('a')[0].onclick=function(){
+			speed=-2;
+		};
+		document.getElementsByTagName('a')[1].onclick=function(){
+			speed=2;
+		};
+
+	};
+	</script>
+
+</head>
+<body>
+<a href="javascript:;">向左</a>
+<a href="javascript:;">向右</a>
+ <div id="div1">
+ 	<ul>
+ 		<li><img src="img/001.jpg" alt="1" /></li>
+ 		<li><img src="img/002.jpg" alt="2" /></li>
+ 		<li><img src="img/003.jpg" alt="3" /></li>
+ 		<li><img src="img/004.jpg" alt="4" /></li>
+ 	</ul>
+ </div>
+</body>
+</html>
