@@ -26,7 +26,7 @@ body{font-size: 12px;font-family: "微软雅黑";}/*设计要求*/
 	+background:#495461;    /*ie6,ie7*/
 }
 
-.wrap { width: 1349px; background: #eeeeee; }
+.wrap { width: 1349px; }
 hr { position: relative; outline: 0; border: 0; width: 100%; height: 4px; background: #dddddd; margin: 20px 0; }
 
 /*左侧固定栏*/   /*ie7和ie8需要调试*/
@@ -55,7 +55,7 @@ hr { position: relative; outline: 0; border: 0; width: 100%; height: 4px; backgr
 .main_home h2 { margin-bottom: 30px; font-size: 42px; color: #fff; font-family: "宋体"; }
 .main_home h5 { font-size: 22px; color: #fff; font-family: "宋体"; }
 
-.main_about { width: 1049px; height: 664px;  }
+.main_about { width: 1049px; height: 664px;  background: #eeeeee;  }
 .main_about .row_1 { float: left; position: relative; left: 100px; top: 45px; padding: 60px 40px; width: 500px; height: 450px; background: #fff; font-size: 16px; color: #999; border-radius: 10px; box-shadow: 2px 0px 3px rgba(0,0,0,0.3); }
 .main_about .row_1 h3 { margin-bottom: 10px; line-height: 24px; }
 .main_about .row_1 p { margin-bottom: 10px; }
@@ -75,7 +75,7 @@ hr { position: relative; outline: 0; border: 0; width: 100%; height: 4px; backgr
 .list_section .col2 { width: 25px; }
 .list_section .col2 { position: relative; top: 7px; }
 
-.main_projects { width: 1049px; height: 664px;  }
+.main_projects { width: 1049px; height: 664px;  background: #eeeeee;  }
 .main_projects .row_2  { margin: 0 80px;  width: 889px; }
 .main_projects .row_2 h3 {  position: relative; margin: 20px 0; background: #fff; font-size: 17px; color: #999; }
 .main_projects .row_2 .p1,.main_projects .row_2 .p2 { line-height: 27px;  font-size: 16px; font-family: "宋体"; color: #999; }
@@ -98,6 +98,7 @@ hr { position: relative; outline: 0; border: 0; width: 100%; height: 4px; backgr
 .msginfo{ text-align: right; }
 .author{ margin-left: 24px; }
 
+.main_contact {  background: #eeeeee; }
 .main_contact .con_mid { margin-bottom: 10px; width: 600px; }
 .main_contact .con_mid .ct { margin-left: 20px; }
 .showtip{ margin-left: 30px; border-radius: 8px; background-color: #c8c8c8; }
