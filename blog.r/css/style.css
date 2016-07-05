@@ -26,7 +26,7 @@ body{font-size: 12px;font-family: "微软雅黑";}/*设计要求*/
 	+background:#495461;    /*ie6,ie7*/
 }
 
-.wrap { width: 1349px; background: #eeeeee; }
+.wrap { margin: 0 auto; width: 1349px; background: #eeeeee; }
 hr { position: relative; outline: 0; border: 0; width: 100%; height: 4px; background: #dddddd; margin: 20px 0; }
 
 /*左侧固定栏*/   /*ie7和ie8需要调试*/
@@ -50,8 +50,13 @@ hr { position: relative; outline: 0; border: 0; width: 100%; height: 4px; backgr
 
 
 /*主体内容*/
-.main_home { width: 1049px; height: 664px;background: url(../img/1.jpg) no-repeat; background-size: cover; }
-.home_text { padding: 200px 80px; }
+.main_home { width: 1049px; height: 664px; overflow: hidden; position: relative; }
+.main_home .home_pic img { width: 1049px; height: 664px; }
+.main_home .home_pic li { position: absolute; top: 0; display: none; z-index: 0; }
+.main_home .home_num { position: absolute; left: 50%; bottom: 40px; z-index: 2; }
+.main_home .home_num li { width: 20px; height: 20px; text-align: center; line-height: 20px; background: #38415f; color: #fff; float: left; margin-right: 10px; }
+.main_home .home_num .current { background: #f60; font-weight: bold; }
+.home_text { position: absolute; left: 80px; top: 200px; z-index: 3; }
 .main_home h2 { margin-bottom: 30px; font-size: 42px; color: #fff; font-family: "宋体"; }
 .main_home h5 { font-size: 22px; color: #fff; font-family: "宋体"; }
 
