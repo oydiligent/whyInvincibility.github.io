@@ -1,12 +1,76 @@
 $(function(){
 
-		//导航条
-		$(function (){
-			$(".side_main li").bind("click",function (){
-				$(this).addClass("active");
-				$(this).siblings().removeClass("active");
-			})
+		//给窗口加滚动条事件
+		$(window).scroll(function() {
+            var ling=$(document).scrollTop();
+         	//在标题栏显示滚动的距离
+         	//document.title=ling;
+         	if (0 < ling && ling < 500){
+         		$(".side_main li").eq(0).addClass("active");
+         		$(".side_main li").eq(0).siblings().removeClass("active");
+         	} else if (500 < ling && ling < 1220){
+         		$(".side_main li").eq(1).addClass("active");
+         		$(".side_main li").eq(1).siblings().removeClass("active");
+         	} else if (1220 < ling && ling < 1821){
+         		$(".side_main li").eq(2).addClass("active");
+         		$(".side_main li").eq(2).siblings().removeClass("active");
+         	} else if (1821 < ling){
+         		$(".side_main li").eq(3).addClass("active");
+         		$(".side_main li").eq(3).siblings().removeClass("active");
+         	}
+        });
+
+        //导航条点击事件
+        $(".side_main li").click(function(){
+			var ind = $(".side_main li").index(this)+1;
+			var topVal = $('#nav_'+ind).offset().top;
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active");
+			$('body,html').animate({scrollTop:topVal},1000);
 		})
+         
+
+
+		//幻灯片
+		var isRun=true;
+		var slideNum=$(".main_home .home_pic>li").length;  //图片和页码数目
+		var slideNumHtml='<ul class="home_num">';
+		for (var i = 1; i <= slideNum; i++) {
+			slideNumHtml+='<li>'+i+'</li>';
+		}
+		slideNumHtml+='</ul>';
+		//console.log(slideNumHtml);
+		$('.main_home .home_pic').after(slideNumHtml);
+
+		function showSlide(num){
+			if (num==$(".main_home .home_num>li").index($(".main_home .home_num>li.current"))) {
+				return false;
+			}
+			$(".main_home .home_pic>li").filter(":visible").fadeOut().css({"z-index":0});
+			$(".main_home .home_pic>li").eq(num).fadeIn().css({"z-index":1});
+			$(".main_home .home_num>li").filter(".current").removeClass("current");
+			$(".main_home .home_num>li").eq(num).addClass("current");
+		}
+		showSlide(0);
+		$(".main_home .home_num>li").on("mouseenter",function() {
+			var _this=$(".main_home .home_num>li").index(this);
+			showSlide(_this);
+		});
+
+		$(".main_home").hover(function() {
+			isRun=false;
+		},function() {
+			isRun=true;
+		});
+		setInterval(function() {
+			if (isRun) {
+				if ($(".main_home .home_num>li.current").next().length==0) {
+				$(".main_home .home_num>li").eq(0).triggerHandler("mouseenter");
+			} else{
+				$(".main_home .home_num>li.current").next().triggerHandler("mouseenter");
+			}
+			}
+		},1500);
 
 
 		//显示隐藏
